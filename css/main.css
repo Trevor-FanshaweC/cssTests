@@ -1,0 +1,79 @@
+.body { font-size: 16px; }
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(370px, 1fr));
+    grid-gap: 20px;
+}
+
+.wrapper > article { 
+    position: relative; 
+    overflow: hidden;
+    width: 370px; 
+    height: 370px; 
+    background-color: red;
+    background-image: url("../images/3_cannoli.jpg");
+    cursor: pointer;
+}
+
+.text {
+    position: relative;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    height: 100%;
+    padding: 10px 20px;
+    transform: translate(0, 370px);
+
+    transition: all 0.7s ease;
+
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+article:hover .text {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.header { 
+    font-size: 2em; 
+    font-weight:bolder; 
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.header::before {
+    content: "::  ";
+    font-size: 1.2em;
+    position: relative;
+    top: -2px;
+    opacity: 0.7;
+}
+
+.see-more-button {
+    display: block;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.see-more-button a { 
+    text-decoration: none !important;
+    color: white;
+}
+
+.see-more-button a:hover {
+    color: green;
+}
+
+.see-more-button a:hover::after {
+    content: " >>";
+    font-size: 0.8rem;
+}
+
+article:target::after {
+    content: url("../images/checkmark.png");
+    position: absolute;
+    top: 0; 
+    right: 0;
+}
+    
